@@ -14,7 +14,7 @@ S.lines = {
 				},
 			},
 			Thc = {
-				name = "Tahn Cliffs",
+				name = "Tanh Cliffs",
 				doors = "L",
 				next_station = {
 					N = "Noi",
