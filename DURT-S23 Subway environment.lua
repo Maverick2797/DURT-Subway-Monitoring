@@ -52,7 +52,136 @@ S.lines = {
 		}
 	},
 	S21 = {
-	
+		termini = {
+			E = "Tro",
+			W = "Dbl"
+		},
+		stations = {
+			Dbl = {
+				name = "Dubulti",
+				doors = "R",
+				next_station = {
+					E = "Pav",
+					W = "Ghd"
+				}
+			},
+			Pav = {
+				name = "Pence Avenue",
+				doors = "L",
+				next_station = {
+					E = "Gdh",
+					W = "Dbl"
+				}
+			},
+			Ghd = {
+				name = "Greenhat Mountain",
+				doors = "L",
+				next_station = {
+					E = "Acm",
+					W = "Dbl"
+				}
+			},
+			Acm = {
+				name = "Acacia Mountains",
+				doors = "L",
+				next_station = {
+					E = "Ghb",
+					W = "Ghd"
+				}
+			},
+			Ghb = {
+				name = "Green Hill Beach",
+				doors = "L",
+				next_station = {
+					E = "Ged",
+					W = "Acm"
+				}
+			},
+			Ged = {
+				name = "Green Edge",
+				doors = "L",
+				next_station = {
+					E = "Dri",
+					W = "Ghb"
+				}
+			},
+			Dri = {
+				name = "Dry Island",
+				doors = "L",
+				next_station = {
+					E = "Gcl",
+					W = "Ged"
+				}
+			},
+			Gcl = {
+				name = "Green Cliffs",
+				doors = "R",
+				next_station = {
+					E ="Sfs",
+					W = "Dri"
+				}
+			},
+			Sfs = {
+				name = "South Forest",
+				doors = "R",
+				next_station = {
+					E = "Jms",
+					W = "Gcl"
+				}
+			},
+			Jms = {
+				name = "Jude Milhon Street",
+				doors = "R",
+				next_station = {
+					E = "Bam",
+					W = "Sfs"
+				}
+			},
+			Bam = {
+				name = "Bamboo Hills",
+				doors = "R",
+				next_station = {
+					E = "Cli",
+					W = "Jms"
+				}
+			},
+			Cli = {
+				name = "Clown Island",
+				doors = "R",
+				next_station = {
+					E = "Wat",
+					W = "Bam"
+				}
+			},
+			Wat = {
+				name = "Something in the Water",
+				doors = "L",
+				next_station = {
+					E = "Duf",
+					W = "Cli"
+				}
+			},
+			Duf = {
+				name = "Duff Rd",
+				doors = "R",
+				next_station = {
+					E = "Tro",
+					W = "Wat"
+				}
+			},
+			Tro = {
+				name = "Turtle Rock",
+				doors = "L",
+				next_station = {
+					E = false,
+					W = "Duf"
+				},
+			}
+		},
+		monitoring = {
+			E = {}
+			W = {}
+		}
 	}
 }
 
