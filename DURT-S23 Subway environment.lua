@@ -2,10 +2,10 @@ S.lines = {
 	S23 = {
 		termini = {
 			N = "Bbh",
-			S = "Rdw"
+			S = "Rew"
 		},
 		stations = {
-			Rdw = {
+			Rew = {
 				name = "Redwood",
 				doors = "L",
 				next_station = {
@@ -18,7 +18,7 @@ S.lines = {
 				doors = "L",
 				next_station = {
 					N = "Noi",
-					S = "Rdw"
+					S = "Rew"
 				},
 			},
 			Noi = {
