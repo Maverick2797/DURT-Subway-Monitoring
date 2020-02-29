@@ -77,7 +77,7 @@ S.lines = {
 				name = "Pence Avenue",
 				doors = "L",
 				next_station = {
-					E = "Gdh",
+					E = "Ghd",
 					W = "Dbl"
 				}
 			},
