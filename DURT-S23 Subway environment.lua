@@ -1,7 +1,7 @@
 S.lines = {
 	S23 = {
 		termini = {
-			N = "Bbh",
+			N = "Arc",
 			S = "Rew"
 		},
 		stations = {
@@ -41,8 +41,16 @@ S.lines = {
 				name = "Bamboo Hills",
 				doors = "L",
 				next_station = {
-					N = false,
+					N = "Arc",
 					S = "Lzf"
+				},
+			},
+			Arc = {
+				name = "Arcadius",
+				doors = "L",
+				next_station = {
+					N = false,
+					S = "Bbh"
 				},
 			}
 		},
