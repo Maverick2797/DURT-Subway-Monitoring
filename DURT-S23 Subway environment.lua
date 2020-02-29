@@ -51,7 +51,7 @@ S.lines = {
 			S = {}
 		}
 	},
-	S21 = {
+	U21 = {
 		termini = {
 			E = "Tro",
 			W = "Dbl"
@@ -215,11 +215,22 @@ end
 --LuaATC track functions
 
 F.station = function(stn_code,dir,line)
+
+-- temp until all SF LuaAtc tracks are changed-------------------------
+	if line == nil or "1" then line = "U21" end
+---------------------------------------------------------------------
+
 	if event.train then
 		F.arrive(stn_code,dir,line)
 		interrupt(10,"depart")
 	elseif event.int and event.msg=="depart" then
 		F.depart(stn_code,dir,line)
+	elseif event.ext_int and event.msg=="go" then
+		if atc_id then	
+			set_route(stn_code.."_exit_"..dir,"To "..S.lines[line].stations[stn_code].next_station[dir])
+			atc_send("S0WOCSM")
+		end
+		return
 	end
 end
 
