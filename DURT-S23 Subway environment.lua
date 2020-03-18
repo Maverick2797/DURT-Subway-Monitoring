@@ -187,7 +187,7 @@ S.lines = {
 			}
 		},
 		monitoring = {
-			E = {}
+			E = {},
 			W = {}
 		}
 	}
