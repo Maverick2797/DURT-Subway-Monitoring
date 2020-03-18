@@ -211,6 +211,7 @@ F.depart = function(stn_code,dir,line)
 		atc_set_text_inside("Next Stop:\n"..S.lines[line].stations[S.lines[line].stations[stn_code].next_station[dir]].name)
 		atc_send("OC SM")
 		S.lines[line].monitoring[dir][stn_code] = nil
+		S.lines[line].monitoring[dir][S.lines[line].stations[stn_code].next_station[dir]] = atc_id
 	else
 		-- Wait another 5s before trying again
 		atc_set_text_inside("Waiting to depart...")
