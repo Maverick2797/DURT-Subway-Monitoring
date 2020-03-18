@@ -205,8 +205,9 @@ F.arrive = function(stn_code,dir,line)
 end
 
 F.depart = function(stn_code,dir,line)
-	if can_set_route(stn_code.."_exit_"..dir,"To "..S.lines[line].stations[stn_code].next_station[dir]) then
-		set_route(stn_code.."_exit_"..dir,"To "..S.lines[line].stations[stn_code].next_station[dir])
+	local pos = stn_code..dir
+	if can_set_route(pos,stn_code.."->"..S.lines[line].stations[stn_code].next_station[dir]) then
+		set_route(pos,stn_code.."->"..S.lines[line].stations[stn_code].next_station[dir])
 		atc_set_text_inside("Next Stop:\n"..S.lines[line].stations[S.lines[line].stations[stn_code].next_station[dir]].name)
 		atc_send("OC SM")
 		S.lines[line].monitoring[dir][stn_code] = nil
@@ -237,12 +238,6 @@ F.station = function(stn_code,dir,line)
 		interrupt(10,"depart")
 	elseif event.int and event.msg=="depart" then
 		F.depart(stn_code,dir,line)
-	elseif event.ext_int and event.msg=="go" then
-		if atc_id then	
-			set_route(stn_code.."_exit_"..dir,"To "..S.lines[line].stations[stn_code].next_station[dir])
-			atc_send("S0WOCSM")
-		end
-		return
 	end
 end
 
