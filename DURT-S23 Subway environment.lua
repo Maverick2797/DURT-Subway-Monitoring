@@ -188,7 +188,9 @@ S.lines = {
 		},
 		monitoring = {
 			E = {},
-			W = {}
+			W = {},
+			S = {},
+			N = {}
 		}
 	}
 }
@@ -225,7 +227,9 @@ end
 F.station = function(stn_code,dir,line)
 
 -- temp until all SF LuaAtc tracks are changed-------------------------
-	if line == nil or "1" then line = "U21" end
+	if line == nil or line == "1" then
+		line = "U21"
+	end
 ---------------------------------------------------------------------
 
 	if event.train then
