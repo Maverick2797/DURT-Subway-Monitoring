@@ -206,17 +206,18 @@ end
 
 F.depart = function(stn_code,dir,line)
 	local pos = stn_code..dir
+	local inside_text = "Next Stop:\n"..S.lines[line].stations[S.lines[line].stations[stn_code].next_station[dir]].name
 	if can_set_route(pos,stn_code.."->"..S.lines[line].stations[stn_code].next_station[dir]) then
 		set_route(pos,stn_code.."->"..S.lines[line].stations[stn_code].next_station[dir])
-		atc_set_text_inside("Next Stop:\n"..S.lines[line].stations[S.lines[line].stations[stn_code].next_station[dir]].name)
 		atc_send("OC SM")
 		S.lines[line].monitoring[dir][stn_code] = nil
 		S.lines[line].monitoring[dir][S.lines[line].stations[stn_code].next_station[dir]] = atc_id
 	else
 		-- Wait another 5s before trying again
-		atc_set_text_inside("Waiting to depart...")
+		inside_text = inside_text.."\nWaiting to depart..."
 		interrupt(5, "depart")
 	end
+	atc_set_text_inside(inside_text)
 end
 
 F.set_desto = function(dir, line)
