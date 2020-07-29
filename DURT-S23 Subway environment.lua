@@ -263,3 +263,51 @@ F.terminus = function(stn_code, newdir, line)
         F.depart(stn_code, newdir,line)
     end
 end
+
+F.section_monitor = function(line,this_section,next_section)
+--<documentation>
+	--line: used to differentiate which control board in high usage cases
+	--this_section: the section the arrow points away from. set as nil if entering from unmonitored sections
+	--next_section: the section the arrow points to. set as nil if entering unmonitored sections
+--</documentation>
+--
+	if this_section then
+		if not S.section_monitor[line][this_section] then
+			S.section_monitor[line][this_section] = {
+				['name'] = this_section,
+				['occupancy'] = "initial occ",
+				['id'] = "init id"
+			}
+		end
+	end
+	if next_section then
+		if not S.section_monitor[line][next_section] then
+			S.section_monitor[line][next_section] = {
+				['name'] = next_section,
+				['occupancy'] = "initial occ",
+				['id'] = "init id",
+			}
+		end
+	end
+	if event.train then
+		if atc_arrow == true then --arrow points to next section
+			if this_section then
+				S.section_monitor[line][this_section].occupancy = false
+				S.section_monitor[line][this_section].id = nil
+			end
+			if next_section then
+				S.section_monitor[line][next_section].occupancy = true
+				S.section_monitor[line][next_section].id = atc_id
+			end
+		else -- going against for some reason... unusual but not impossible
+			if this_section then
+				S.section_monitor[line][this_section].occupancy = true
+				S.section_monitor[line][this_section].id = atc_id
+			end
+			if next_section then
+				S.section_monitor[line][next_section].occupancy = false
+				S.section_monitor[line][next_section].id = nil
+			end
+		end
+	end
+end
