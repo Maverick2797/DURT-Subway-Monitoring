@@ -195,6 +195,11 @@ S.lines = {
 	}
 }
 
+S.runarounds = {
+	["TheStacks"] = {},
+	["M27_Quarry_runaround"] = {},
+	["M27_Breaker_Factory"] = {},
+}
 ---------------------------------------------------------------------
 --defining the functions
 
