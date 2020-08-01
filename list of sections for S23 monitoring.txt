@@ -1,0 +1,30 @@
+Arcadius Stn
+Arcadius Approach (NS)
+
+BBh Passenger (NS)
+BBh Freight (NS)
+
+S23_Bbh Tunnel (NS)
+S23_Lzf Tunnel (NS)
+
+LFZ Stn (NS)
+LZF-NOI Junc (NS)
+Noi-Junc
+Noi Stn (NS)
+
+Noi Trestle (NS)
+Noi Tunnel x3 (NS)
+
+Tanh Xchange?    don't monitor
+Tanh Stn (NS)
+
+MR Forest -Foundry x3 (NS)
+Foundry - Rew x3 (NS)
+
+Rew Stn (NS)
+
+Luvr Tun - Nimbyton (single track)
+
+Nimbyton Stn (NS)
+
+Nimbyton - Mom Junc (Single Track)
